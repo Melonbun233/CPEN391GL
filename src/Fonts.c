@@ -6,7 +6,7 @@
  */
 #include "Fonts.h"
 #include "CPEN391GL.h"
-
+#include "CPEN391GLUtils.h"
 
 //check if the character is printable
 static int check_printable(int c)
@@ -15,16 +15,6 @@ static int check_printable(int c)
 		return 1;
 	else
 		return 0;
-}
-
-//check if the pixel can be displayed on the screen
-static int check_boundary(int x, int y)
-{
-	if ((short)(x) >= (short)(XRES) || (short)(y) >= (short)(YRES) ||
-		(short)(x) < (short)(0) || (short)(y) < (short)(0))
-		return 0;
-	else
-		return 1;
 }
 
 void print_string(int x, int y, int fontsize, int fontspace, int fontcolour, 

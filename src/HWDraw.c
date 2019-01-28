@@ -44,6 +44,9 @@ void draw_hline(int x1, int y1, int length, int colour)
 
     int x2 = x1 + length - 1;
 
+    if(x2 >= XRES)
+        x2 = XRES - 1;
+
     WAIT_FOR_GRAPHICS;
     GRAPHICS_X1_REG = x1;
     GRAPHICS_X2_REG = x2;
@@ -60,6 +63,9 @@ void draw_vline(int x1, int y1, int length, int colour)
 
     int y2 = y1 + length - 1;   //two same points result in a single point in hw
 
+    if (y2 >= YRES)
+        y2 = YRES - 1;
+    
     WAIT_FOR_GRAPHICS;
     GRAPHICS_X1_REG = x1;
     GRAPHICS_X2_REG = x1;
