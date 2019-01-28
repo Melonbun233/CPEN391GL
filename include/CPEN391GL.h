@@ -18,5 +18,10 @@
 //This file contains all colour constants
 #include "Colours.h"
 
+#include "Rectangle.h"
+
+#include "Triangle.h"
+
+#include "Types.h"
 
 #endif

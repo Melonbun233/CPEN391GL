@@ -39,7 +39,8 @@ void program_palette(int index, int RGB)
 
 void draw_hline(int x1, int y1, int length, int colour)
 {
-	if (length == 0 || x1 < 0 || y1 < 0 || colour < 0)
+	if (length <= 0 || x1 < 0 || y1 < 0 || colour < 0 ||
+			x1 >= XRES || y1 >= YRES)
         return;
 
     int x2 = x1 + length - 1;
@@ -58,7 +59,8 @@ void draw_hline(int x1, int y1, int length, int colour)
 
 void draw_vline(int x1, int y1, int length, int colour)
 {
-	if (length == 0 || x1 < 0 || y1 < 0 || colour < 0 || length < 0)
+	if (length <= 0 || x1 < 0 || y1 < 0 || colour < 0 ||
+			x1 >= XRES || y1 >= YRES)
         return;
 
     int y2 = y1 + length - 1;   //two same points result in a single point in hw
@@ -77,7 +79,8 @@ void draw_vline(int x1, int y1, int length, int colour)
 
 void draw_line(int x1, int y1, int x2, int y2, int colour)
 {
-    if (x1 < 0 || x2 < 0 || y1 < 0 || y2 <0 || colour < 0)
+    if (x1 < 0 || x2 < 0 || y1 < 0 || y2 <0 || colour < 0 ||
+    		x1 >= XRES || x2 >= XRES || y1 >= YRES || y2 >= YRES)
         return;
 
     WAIT_FOR_GRAPHICS;

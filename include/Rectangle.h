@@ -23,7 +23,7 @@ struct Rectangle
 	//default colour is BLACK (0)
 	uint8_t border_colour;
 	//default border width is 1
-	uint8_t border_width;
+	uint16_t border_width;
 
 	//rectangle's inner colour
 	//default colour is WHITE (1)

@@ -75,6 +75,8 @@ void draw_vline(int x1, int y1, int length, int colour);
 * 	- If the two points are the same, a point will be drawn
 * 	NOTE: Use this function to draw vertical or horizontal line will cost more 
 * 	GPU cycles
+* 	NOTE: The two points should be both in the screen. Otherwise nothing will be
+* 	drawn.
 ************************************************************************************/
 void draw_line(int x1, int y1, int x2, int y2, int colour);
 
