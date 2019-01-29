@@ -90,26 +90,48 @@ void test_trig(void)
 
 void test_text(void)
 {
-	char text1[] = "Hello";
-	char text2[] = "World!";
-	//some texts
-	print_string(50, 50, 10, 4, RED, text1, 5, 0, WHITE);
-	print_string(100, 100, 5, 3, YELLOW, text2, 6, 1, BLACK);
+	char content[] = "Hello World!";
+	struct Text *text = text_create(50, 50, content, 10, 4, RED);
 
-	print_string(500, 100, 16, 3, BLACK, text1, 5, 0, WHITE);
-	print_string(600, 100, 16, 3, CYAN, text2, 6, 1, WHITE);
+	text_draw(text);
 
-	print_string(100, 300, 22, 3, LIGHT_SALMON, text1, 5, 1, YELLOW_REPEAT);
-	print_string(200, 400, 22, 3, WHITE, text2, 6, 0, LIME_GREEN);
+	text->x = 100;
+	text->y = 100;
+	text->font_size = 5;
+	text->font_colour = YELLOW;
+	text_draw(text);
 
-	print_string(500, 300, 38, 3, POWDER_BLUE, text1, 5, 0, MIDNIGHT_BLUE);
-	print_string(550, 400, 38, 3, KHAKI, text2, 6, 1, WHITE);
+	text->x = 100;
+	text->y = 450;
+	text->font_size = 10;
+	text->font_colour = BLACK;
+	text_draw(text);
+
+	text->x = 500;
+	text->y = 100;
+	text->font_size = 16;
+	text->font_colour = CYAN;
+	text_draw(text);
+
+	text->x = 100;
+	text->y = 300;
+	text->font_size = 22;
+	text->font_colour = LIGHT_SALMON;
+	text_draw(text);
+
+	text->x = 500;
+	text->y = 300;
+	text->font_size = 38;
+	text->font_colour = POWDER_BLUE;
+	text_draw(text);
+
+	text_destroy(text);
 	printf("text test done\n");
 }
 
 int main(void)
 {
-	int old_switches = *SWITCHES;
+	int old_switches = 0;
 	int new_switches;
 	clear_screen(WHITE);
 

@@ -56,6 +56,11 @@ void text_destroy(struct Text *text)
 
 void text_draw(struct Text *text)
 {
-	print_string(text->x, text->y, text->font_size, text->font_space, text->font_colour,
+	int font_size = text->font_size;
+	if (font_size != 5 && font_size != 10 && font_size != 16 && font_size != 22 && font_size != 38)
+		font_size = 10;
+
+	print_string(text->x, text->y, font_size, text->font_space, text->font_colour,
 		text->content, strlen(text->content), 0, 0);
 }
+
