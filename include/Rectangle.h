@@ -19,14 +19,14 @@ struct Rectangle
 	uint16_t width;
 	uint16_t height;
 
-	//rectangle's boarder colour
-	//default colour is BLACK (0)
+	//rectangle's border colour
+	//default colour is BLACK
 	uint8_t border_colour;
 	//default border width is 1
 	uint16_t border_width;
 
 	//rectangle's inner colour
-	//default colour is WHITE (1)
+	//default colour is WHITE
 	uint8_t inner_colour;
 
 	//whether inner color is applied
