@@ -12,7 +12,7 @@ struct Rectangle *rect_create(int x, int y, int width, int height)
 	rect->width = (uint16_t)width;
 	rect->height = (uint16_t)height;
 	rect->border_colour = BLACK;
-	rect->border_width = 1;
+	rect->border_width = 0;
 	rect->inner_colour = WHITE;
 	rect->filled = TRUE;
 
