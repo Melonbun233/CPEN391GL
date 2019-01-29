@@ -1,6 +1,5 @@
 #include "CPEN391GL.h"
 #include <stdio.h>
-#include "Types.h"
 
 #define SWITCHES    (volatile unsigned int *)(0xFF200000)
 

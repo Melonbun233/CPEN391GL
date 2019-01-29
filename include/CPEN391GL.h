@@ -24,5 +24,7 @@
 
 #include "Types.h"
 
+#include "Text.h"
+
 
 #endif
