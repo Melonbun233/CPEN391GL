@@ -31,6 +31,7 @@
 #define	PUT_PIXEL					0xA
 #define	GET_PIXEL					0xB
 #define	PROGRAM_PALETTE_COLOUR    	0x10
+#define CLEAR_SCREEN				0x11
 
 /*******************************************************************************************
 * This function writes a single pixel to the x,y coords specified using the specified colour
@@ -79,6 +80,11 @@ void draw_vline(int x1, int y1, int length, int colour);
 * 	drawn.
 ************************************************************************************/
 void draw_line(int x1, int y1, int x2, int y2, int colour);
+
+/**
+ * Clear the screen with specified colour
+ */
+void clear_screen(int colour);
 
 #endif
 

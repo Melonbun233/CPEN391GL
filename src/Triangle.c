@@ -34,6 +34,11 @@ void trig_draw(struct Triangle *trig)
 	int x1 = trig->x1, x2 = trig->x2, x3 = trig->x3;
 	int y1 = trig->y1, y2 = trig->y2, y3 = trig->y3;
 
+	//only draw the triangle if all three points are within the screen
+	if(!check_boundary(x1, y1) || !check_boundary(x2, y2) ||
+	   !check_boundary(x3, y3))
+		return;
+
 	//center point used for filling
 	int center_x;
 	int center_y;

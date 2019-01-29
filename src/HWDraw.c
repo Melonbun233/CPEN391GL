@@ -92,3 +92,14 @@ void draw_line(int x1, int y1, int x2, int y2, int colour)
     GRAPHICS_COLOUR_REG = colour;
     GRAPHICS_COMMAND_REG = DRAW_LINE;
 }
+
+void clear_screen(int colour)
+{
+    if (colour < 0)
+        return;
+
+    WAIT_FOR_GRAPHICS;
+
+    GRAPHICS_COLOUR_REG = colour;
+    GRAPHICS_COMMAND_REG = CLEAR_SCREEN;
+}
