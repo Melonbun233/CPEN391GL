@@ -3,7 +3,7 @@
 #include "Types.h"
 #include "Colours.h"
 #include "HWDraw.h"
-#include "Fill.h"
+#include "CPEN391GLUtils.h"
 
 
 struct Triangle *trig_create(int x1, int y1, int x2, int y2, int x3, int y3)
@@ -43,6 +43,8 @@ void trig_draw(struct Triangle *trig)
 	draw_line(x3, y3, x1, y1, trig->border_colour);
 
 	if (trig->filled) {
+		center_x = (x1 + x2 + x3)/3;
+		center_y = (y1 + y2 + y3)/3;
 		fill_shape(center_x, center_y, trig->inner_colour, trig->border_colour);
 	}
 }

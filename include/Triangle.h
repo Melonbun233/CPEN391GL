@@ -49,3 +49,4 @@ void trig_destroy(struct Triangle *trig);
 void trig_draw(struct Triangle *trig);
 
 #endif
+

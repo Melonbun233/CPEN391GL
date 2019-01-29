@@ -7,16 +7,31 @@ int main(void)
 	int i;
 
 	//test rectangle
-	struct Rectangle *rect = rect_create(0, 0, 30, 10);
-	for (i = 0; i < 800; i += 10) {
-		rect->x = i;
-		rect->y = i;
-		rect->width = 3 * i;
-		rect->height = i;
-		rect->border_width = i/50;
-		rect->border_colour = i/5;
-		rect->inner_colour = i/10;
-		rect_draw(rect);
+//	struct Rectangle *rect = rect_create(0, 0, 30, 10);
+//	for (i = 0; i < 800; i += 10) {
+//		rect->x = i;
+//		rect->y = i;
+//		rect->width = 3 * i;
+//		rect->height = i;
+//		rect->border_width = i/50;
+//		rect->border_colour = i/5;
+//		rect->inner_colour = i/10;
+//		rect_draw(rect);
+//	}
+
+	//test triangle
+	struct Triangle *trig = trig_create(50, 50, 30, 30, 70, 10);
+
+	for(i = 0; i < 200; i += 5) {
+		trig->x1 = (50 + i);
+		trig->y1 = (50 + 2 * i);
+		trig->x2 = (30 + 1.2 * i);
+		trig->y2 = (30 + i);
+		trig->x3 = (70 + 1.5 * i);
+		trig->y3 = (10 + i);
+		trig->border_colour = i/5;
+		trig->inner_colour = i/10;
+		trig_draw(trig);
 	}
 //
 //    //top-left corner
